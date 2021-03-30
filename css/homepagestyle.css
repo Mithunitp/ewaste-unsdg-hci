@@ -1,0 +1,110 @@
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#btn{
+    border: transparent;
+    background: transparent;
+    font-size: 16px;
+}
+#btn:hover{
+    background: cyan;
+    border-radius: 3px;
+}
+
+body{
+    background-image:url(../img/homepageback.jpeg);
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+}
+
+.menu-bar{
+    background: gold;
+    text-align: center;
+}
+
+.menu-bar ul{
+    display:inline-flex;
+    list-style: none;
+    color:black;  
+}
+
+.menu-bar ul li{
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.menu-bar ul li a{
+    text-decoration: none;
+    color: black;
+}
+
+.active,.menu-bar ul li:hover{
+    background: cyan;
+    border-radius: 3px; 
+}
+
+.menu-bar .fa{
+    margin-right: 8px;
+}
+
+.sub-menu-1{
+    display:  none;
+}
+
+.menu-bar ul li:hover .sub-menu-1{
+    display: block;
+    position: absolute;
+    background: gold;
+    margin-top: 15px;
+    margin-left: -15px; 
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul{
+    display: block;
+    margin:10px; 
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li{
+    width:90px;
+    padding: 10px;
+    border-bottom: 1px dotted white;
+    background: transparent;
+    border-radius: 0;
+    text-align: left; 
+}
+
+.menu-bar ul li:hover .sub-menu-1 ul li:last-child{
+    border-bottom: none;
+} 
+
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover{
+    color: blue;
+}
+
+.sub-menu-2{
+    display: none;
+}
+
+.hover-me:hover .sub-menu-2{
+    position: absolute;
+    display: block;
+    margin-top: -40px;
+    margin-left: 80px;
+    background: gold;
+    width: 120px;
+    border-bottom: 1px dotted white;
+}
+
+.fa{
+    float: inherit;
+}
+
+.sub-menu-1{
+    text-align: left;
+}
