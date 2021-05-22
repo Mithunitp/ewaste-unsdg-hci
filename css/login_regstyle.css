@@ -1,0 +1,118 @@
+body{
+    height:100vh;
+    background-size:cover;
+    background-position:center;
+}
+input{
+    width: 430px;
+	margin: 0 auto;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+#main-wrapper{
+	border-radius : 10px;
+	background-color: transparent;
+	border: 3px solid cyan;
+	width: 500px;
+	margin: 0 auto;
+    color: gold;
+}
+.inner_container{
+	width:450px;
+	margin:0 auto;
+    font-family: sans-serif;
+    color: gold;
+}
+.login_button {
+    background-color: black;
+    color: gold;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+	font-weight: bold;
+}
+.login_button:hover{
+    background-color: gold;
+    color:black;
+    cursor: pointer;
+    transition: 0.6s ease;
+}
+.register_btn{
+	background-color: black;
+    color: cyan;
+	margin-top:10px;
+	margin-bottom:15px;
+	padding:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+	
+}
+.register_btn:hover{
+    background-color: gold;
+    color:black;
+    cursor:pointer;
+    transition: 0.6s ease;
+}
+.back_btn{
+	margin-top:10px;
+	color: gold;
+	margin-bottom:15px;
+    padding: 10px;
+    background-color: black;
+}
+.back_btn:hover{
+    background-color: gold;
+    color:black;
+    cursor:pointer;
+    transition: 0.6s ease;
+}
+.logout_button{
+	background-color: black;
+    color: black;
+	margin-top:10px;
+    padding:10px;
+    width: 100%;
+	font-size:18px;
+    font-weight: bold;
+   
+}
+.logout_button:hover{
+    background-color: gold;
+    color:black;
+    cursor:pointer;
+    transition: 0.6s ease;
+}
+
+.sign_up_btn {
+	background-color: black;
+    color: cyan;
+	 padding:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+    width: 100%;
+	font-size:16px;
+	font-weight: bold;
+}
+.sign_up_btn:hover{
+    background-color: gold;
+    color:black;
+    cursor:pointer;
+    transition: 0.6s ease;
+}
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+}
+
+img.avatar {
+    width: 30%;
+    border-radius: 50%;
+}
+
+.container {
+    margin: 16px;
+	width:100%;
+}
