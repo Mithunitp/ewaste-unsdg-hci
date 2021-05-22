@@ -39,7 +39,6 @@
                         <img src="img/img3.png" alt="" data-speed="2" class="move">
                         <img src="img/img4.png" alt="" data-speed="-2" class="move">
                         <img src="img/img5.png" alt="" data-speed="-2" class="move">
-                        
                     </div>
 
                     <div class="home__data">
