@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 01:38 PM
+-- Generation Time: May 22, 2021 at 02:34 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.5
 
@@ -57,6 +57,7 @@ CREATE TABLE `collectors` (
   `username` varchar(20) NOT NULL,
   `password` varchar(20) NOT NULL,
   `collector_name` text NOT NULL,
+  `collector_pin` bigint(6) NOT NULL,
   `collector_address` text NOT NULL,
   `collector_state` text NOT NULL,
   `collector_mno` bigint(10) NOT NULL
@@ -66,17 +67,17 @@ CREATE TABLE `collectors` (
 -- Dumping data for table `collectors`
 --
 
-INSERT INTO `collectors` (`username`, `password`, `collector_name`, `collector_address`, `collector_state`, `collector_mno`) VALUES
-('CJay', '123', '', '', '', 0),
-('collector1', '234', '', '', '', 0),
-('collector2', '345', '', '', '', 0),
-('collector3', '456', '', '', '', 0),
-('collector4', '567', '', '', '', 0),
-('collector5', '678', '', '', '', 0),
-('collector6', '789', '', '', '', 0),
-('collector7', '890', '', '', '', 0),
-('collector8', '90-', '', '', '', 0),
-('collector9', '0-=', '', '', '', 0);
+INSERT INTO `collectors` (`username`, `password`, `collector_name`, `collector_pin`, `collector_address`, `collector_state`, `collector_mno`) VALUES
+('collector01', '234', 'Maheshwari Collection Agency', 324007, 'Gumanpura, Kota ', 'Rajasthan', 9414156789),
+('collector02', '345', 'Jain Collection Agency', 324001, 'Borkheda, Kota', 'Rajasthan', 9352956789),
+('collector03', '456', 'Marwari Collection Agency', 324002, 'Arjunpura, Kota', 'Rajasthan', 9315156789),
+('collector04', '567', 'Gupta Collection Agency', 324001, 'Station Area, Kota', 'Rajasthan', 9454956789),
+('collector05', '678', 'Parihar Collection Agency', 324008, 'Kunadi, Kota', 'Rajasthan', 9352941419),
+('collector06', '789', 'Pathak Collection Agency', 324009, 'Dadabari, Kota', 'Rajasthan', 9829132712),
+('collector07', '890', 'Khan Collection Agency', 324004, 'RK Puram, Kota', 'Rajasthan', 9024582123),
+('collector08', '90-', 'Vishnu Collection Agency', 324007, 'Chawani, Kota', 'Rajasthan', 9568712430),
+('collector09', '0-=', 'Felix Collection Agency', 324005, 'Talwandi, Kota', 'Rajasthan', 8745213609),
+('collector10', '123', 'Yadav Collection Agency', 324001, 'Mala Road, Station Area, Kota', 'Rajasthan', 9414125612);
 
 -- --------------------------------------------------------
 
@@ -155,11 +156,11 @@ CREATE TABLE `recyclers` (
 --
 
 INSERT INTO `recyclers` (`username`, `password`, `rec_name`, `rec_address`, `rec_state`, `rec_mno`) VALUES
-('recycler1', '234', '', '', '', 0),
-('recycler2', '345', '', '', '', 0),
-('recycler3', '456', '', '', '', 0),
-('recycler4', '567', '', '', '', 0),
-('RJay', '123', '', '', '', 0);
+('recycler1', '234', 'M/s. Dhruv Techengineers Pvt. Ltd.', 'G-1209, Rampur\r\nmandana, Industrial Area, Bhiwadi, Alwar', 'Rajasthan', 7014254187),
+('recycler2', '345', 'M/s. Shri Krishna Additives Pvt. Ltd.', 'F-105, Matasya Industrial Area, Alwar', 'Rajasthan', 7254108725),
+('recycler3', '456', 'M/s ETCO E-waste Recycler pvt. ltd', 'SB-23, Shilp Bari Road, 1415 VKI Area, Jaipur', 'Rajasthan', 8461325460),
+('recycler4', '567', 'M/s. E Reclaim Services Pvt. Ltd.', 'Plot No. 466, VKI, Jaipur', 'Rajasthan', 9825654515),
+('recycler5', '123', 'M/s S.B.J. & Company', 'F-137, Growth Centre, RIICO Industrial Area, Dholpur\r\n', 'Rajasthan', 9825645712);
 
 -- --------------------------------------------------------
 
