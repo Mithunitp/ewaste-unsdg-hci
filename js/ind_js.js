@@ -4,8 +4,8 @@ var left,opacity,scale;
 var animation;
 
 
-$(".next").click(function(){
-
+/*$(".next").click(function(){
+	else{
 	if(animation)return false;
 	animation=true;
 
@@ -35,7 +35,7 @@ $(".next").click(function(){
 		},
 		easing:'easeInOutBack'
 	});
-
+	}
 });
 
 
@@ -70,6 +70,6 @@ $(".previous").click(function(){
 		easing:'easeInOutBack'
 	});
 
-}); 
+}); */
 
  

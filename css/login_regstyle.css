@@ -12,7 +12,7 @@ input{
 
 #main-wrapper{
 	border-radius : 10px;
-	background-color: transparent;
+	background-color: rgba(255, 251, 232, 0.5);
 	border: 3px solid cyan;
 	width: 500px;
 	margin: 0 auto;
