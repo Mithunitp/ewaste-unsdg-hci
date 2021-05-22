@@ -57,7 +57,7 @@
 								echo '<script type="text/javascript">alert("User Registered.. Welcome")</script>';
 								$_SESSION['username'] = $username;
 								$_SESSION['password'] = $password;
-								echo '<script>window.location.href="homepage.php";</script>';
+								echo '<script>window.location.href="ind_homepage.php";</script>';
 							}
 							else
 							{
