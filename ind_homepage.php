@@ -84,11 +84,7 @@
 		<div class="col-md-12 col-md-offset-3">
 			<form id="form" action="ind_homepage.php" onsubmit="return validateForm()" method="post">
 
-				<ul id="progressbar">
-					<li class="active">Personal Details</li>
-					<li>Address</li>
-					<li>E-waste specifications</li>
-				</ul>
+				
 
 				<fieldset>
 					<h2 class="title">Personal Details</h2>
