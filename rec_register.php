@@ -20,18 +20,19 @@
 			<div class="inner_container">
 				<label><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="username" required>
+				<label><b>Name</b></label>
+				<input type="text" placeholder="Enter Name" name="rec_name" required>
+				<label><b>Address</b></label>
+				<input type="text" placeholder="Enter Address" name="rec_address" required>
+				<label><b>State</b></label>
+				<input type="text" placeholder="Enter State" name="rec_state" required>
+				<label><b>Contact Number</b></label>
+				<input type="int" placeholder="Enter Contact Number" name="rec_mno" required>
 				<label><b>Password</b></label>
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<label><b>Confirm Password</b></label>
 				<input type="password" placeholder="Enter Password" name="cpassword" required>
-				<label><b>Name</b></label>
-				<input type="text" placeholder="Enter Name" name="collector_name" required>
-				<label><b>Address</b></label>
-				<input type="text" placeholder="Enter Address" name="collector_address" required>
-				<label><b>State</b></label>
-				<input type="text" placeholder="Enter State" name="collector_state" required>
-				<label><b>Contact Number</b></label>
-				<input type="int" placeholder="Enter Contact Number" name="collector_mno" required>
+
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>
 				
 				<a href="rec_login.php"><button type="button" class="back_btn">Back to Login</button></a>
@@ -43,7 +44,11 @@
 				@$username=$_POST['username'];
 				@$password=$_POST['password'];
 				@$cpassword=$_POST['cpassword'];
-				
+				@$rname=$_POST['rec_name'];
+				@$raddress=$_POST['rec_address'];
+				@$rstate=$_POST['rec_state'];
+				@$rmno=$_POST['rec_mno'];
+
 				if($password==$cpassword)
 				{
 					$query = "select * from recyclers where username='$username'";
@@ -58,7 +63,7 @@
 						}
 						else
 						{
-							$query = "insert into recyclers values('$username','$password')";
+							$query = "insert into recyclers values('$username','$password','$rname','$raddress','$rstate','$rmno')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{

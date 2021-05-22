@@ -20,18 +20,20 @@
 			<div class="inner_container">
 				<label><b>Username</b></label>
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<label><b>Password</b></label>
-				<input type="password" placeholder="Enter Password" name="password" required>
-				<label><b>Confirm Password</b></label>
-				<input type="password" placeholder="Enter Password" name="cpassword" required>
 				<label><b>Name</b></label>
 				<input type="text" placeholder="Enter Name" name="collector_name" required>
+				<label><b>Pincode</b></label>
+				<input type="text" placeholder="Enter Pincode" name="collector_pin" required>
 				<label><b>Address</b></label>
 				<input type="text" placeholder="Enter Address" name="collector_address" required>
 				<label><b>State</b></label>
 				<input type="text" placeholder="Enter State" name="collector_state" required>
 				<label><b>Contact Number</b></label>
 				<input type="int" placeholder="Enter Contact Number" name="collector_mno" required>
+				<label><b>Password</b></label>
+				<input type="password" placeholder="Enter Password" name="password" required>
+				<label><b>Confirm Password</b></label>
+				<input type="password" placeholder="Enter Password" name="cpassword" required>
 				
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>
 				
@@ -44,6 +46,11 @@
 				@$username=$_POST['username'];
 				@$password=$_POST['password'];
 				@$cpassword=$_POST['cpassword'];
+				@$cname=$_POST['collector_name'];
+				@$cpin=$_POST['collector_pin'];
+				@$caddress=$_POST['collector_address'];
+				@$cstate=$_POST['collector_state'];
+				@$cmno=$_POST['collector_mno'];
 				
 				if($password==$cpassword)
 				{
@@ -59,7 +66,7 @@
 						}
 						else
 						{
-							$query = "insert into collectors values('$username','$password')";
+							$query = "insert into collectors values('$username','$password','$cname','$cpin','$caddress','$cstate','$cmno')";
 							$query_run = mysqli_query($con,$query);
 							if($query_run)
 							{
