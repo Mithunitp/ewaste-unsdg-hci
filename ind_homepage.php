@@ -38,6 +38,7 @@
 <head>
 	<?php 
 		session_start();
+		include('dbconfig/config.php');
 	?>
 	<meta charset="UTF-8">
 	<title>Enter E-waste details</title>
@@ -230,6 +231,25 @@
 		</div>
 		
 	</div>
+	<!-- PHP Codes for DB -->
+	<?php
+		if(isset($_POST['submit'])){
+			$a = $_SESSION['username'];
+			$b = $_POST['name'];
+			$c = $_POST['mobileno'];
+			$d = $_POST['email'];
+			$e = $_POST['address'];
+			$f = $_POST['pincode'];
+			$q="INSERT INTO `ind_ewaste`(`username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES ('$a', '$b', '$c', '$d' , '$e', '$f', 'hhh','jjj')";
+			$res = mysqli_query($con, $q);
+			if($res){
+				echo "Worked";
+			}
+			else{
+				echo "Didnt work";
+			}
+		}
+	?>
 
 	
 
