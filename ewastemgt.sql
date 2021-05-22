@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 02:34 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.5
+-- Generation Time: May 22, 2021 at 11:29 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -131,9 +131,7 @@ CREATE TABLE `ind_ewaste` (
   `address` text NOT NULL,
   `pincode` bigint(6) NOT NULL,
   `item_cat` text NOT NULL,
-  `item_dimensions` text NOT NULL,
-  `item_quantity` int(11) NOT NULL,
-  `item_age` int(11) NOT NULL
+  `item_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
@@ -205,7 +203,7 @@ ALTER TABLE `individuals`
 -- Indexes for table `ind_ewaste`
 --
 ALTER TABLE `ind_ewaste`
-  ADD PRIMARY KEY (`username`);
+  ADD PRIMARY KEY (`username`,`date`(50),`item_cat`(50)) USING BTREE;
 
 --
 -- Indexes for table `recyclers`
