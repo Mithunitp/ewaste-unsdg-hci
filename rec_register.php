@@ -24,6 +24,14 @@
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<label><b>Confirm Password</b></label>
 				<input type="password" placeholder="Enter Password" name="cpassword" required>
+				<label><b>Name</b></label>
+				<input type="text" placeholder="Enter Name" name="collector_name" required>
+				<label><b>Address</b></label>
+				<input type="text" placeholder="Enter Address" name="collector_address" required>
+				<label><b>State</b></label>
+				<input type="text" placeholder="Enter State" name="collector_state" required>
+				<label><b>Contact Number</b></label>
+				<input type="int" placeholder="Enter Contact Number" name="collector_mno" required>
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>
 				
 				<a href="rec_login.php"><button type="button" class="back_btn">Back to Login</button></a>
