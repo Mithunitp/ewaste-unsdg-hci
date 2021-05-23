@@ -113,7 +113,7 @@ img{
 } 
 
 .nav__link.active{
-  color:yellow;
+  color:#F5AEB0;
 }
 
 .nav__close, .nav__link, .nav__logo, .nav__toggle{
@@ -125,7 +125,7 @@ img{
 }
 
 .nav__link:hover{
-  color: yellow;
+  color:  maroon;
 }
 
 .nav__toggle{
