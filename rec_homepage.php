@@ -13,6 +13,7 @@
         <!-- ===== CSS ===== -->
         <link rel="stylesheet" href="css/col_homepagestyle.css">
 
+
         <title>E-Waste collector portal</title>
 
     </head>
@@ -82,6 +83,7 @@
                     <tr>
                     <td>
                         <?php
+                            $val=$rows['req_id'];
                             echo $rows['req_id'];
                         ?>
                     </td>
@@ -100,6 +102,10 @@
                             echo $rows['Description'];
                         ?>
                     </td>
+                    <td>
+                        <button onclick="window.open('updatestatus.php?id=<?php echo $val ?>')">Accept</button>
+                    </td>
+
                     </tr>
                     <?php } ?>
             </table>
