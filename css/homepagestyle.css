@@ -123,6 +123,7 @@ img{
 .nav__logo{
     font-size: 1.5rem;
 }
+
 .nav__link:hover{
   color: yellow;
 }
