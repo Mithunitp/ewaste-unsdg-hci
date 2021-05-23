@@ -2,10 +2,7 @@
 /*For My LocalPC*/
 $con=mysqli_connect("localhost", "root", "") or die ('I cannot connect to the database because: ' . mysql_error());
 mysqli_select_db($con,"ewastemgt");
-if(!isset($_SESSION['username']))
-{
-    echo '<script>window.location="index.html"</script>';
-}
+
 // $servername = "localhost";
 // $username = "root";
 // $password = "Demo_pw9";

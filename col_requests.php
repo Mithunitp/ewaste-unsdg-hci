@@ -2,6 +2,10 @@
 	session_start();
 	require_once('dbconfig/config.php');
 	//phpinfo();
+    if(!isset($_SESSION['username']))
+    {
+        echo '<script>window.location="col_login.php"</script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">

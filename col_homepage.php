@@ -2,6 +2,10 @@
 	session_start();
 	require_once('dbconfig/config.php');
 	//phpinfo();
+    if(!isset($_SESSION['username']))
+    {
+        echo '<script>window.location="col_login.php"</script>';
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +40,7 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="col_homepage.php" class="nav__link active">Home</a></li>
                         <li class="nav__item"><a href="col_requests.php" class="nav__link">Requests</a></li>
-                        <li class="nav__item"><a href="col_shipment.php" class="nav__link">Shipments</a></li>
+                        <li class="nav__item"><a href="col_shipments.php" class="nav__link">Shipments</a></li>
                         <li class="nav__item"><a href="logout.php" class="nav__link">Logout</a></li>
                     </ul>
                 </div>
@@ -76,7 +80,7 @@
                 <?php
                     $cp=$_SESSION['pin'];
                     $cs=$_SESSION['state'];
-                    $query1="Select * from bin where status='FULL' && bin_pin='$cp'";
+                    $query1="Select * from bin where bin_pin='$cp'";
                     $res1=mysqli_query($con,$query1);
                     while($rows=$res1->fetch_assoc()){
                         ?>
@@ -109,33 +113,39 @@
             <table>
                 <tr>
                     <th>Request ID</th>
-                    <th>Collector Name</th>
-                    <th>Description</th>
+                    <th>Recycler Name</th>
+                    <th>Address</th>
+                    <th>Status</th>
                 </tr>
                 <?php
-                    $query1="Select * from request where status=0";
-                    $res1=mysqli_query($con,$query1);
-                    while($rows=$res1->fetch_assoc()){
+                    $cid=$_SESSION['username'];
+                    $query2="Select * from request where collector_id='$cid' && status=1";
+                    $res2=mysqli_query($con,$query2);
+                    while($rows2=$res2->fetch_assoc()){
                         ?>
                     <tr>
                     <td>
                         <?php
-                            echo $rows['req_id'];
+                            echo $rows2['req_id'];
                         ?>
                     </td>
                     <td>
                         <?php
-                            $x=$rows['collector_id'];
-                            $query2="Select collector_name from collectors where username= '$x'";
-                            //echo $rows['collector_id'];
-                            $res2=mysqli_query($con,$query2);
-                            $row2=$res2->fetch_assoc();
-                            echo $row2['collector_name'];
+                            $x=$rows2['recycler_id'];
+                            $query3="select rec_name, rec_address from recyclers where username='$x'";
+                            $res3=mysqli_query($con,$query3);
+                            $rows3=$res3->fetch_assoc();
+                            echo $rows3['rec_name'];
                         ?>
                     </td>
                     <td>
                         <?php
-                            echo $rows['Description'];
+                            echo $rows3['rec_address'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            echo $rows2['status'];
                         ?>
                     </td>
                     </tr>

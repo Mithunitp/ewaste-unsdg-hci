@@ -99,7 +99,7 @@
                     </td>
                     <td>
                         <?php
-                            echo $rows['Description'];
+                            echo $rows['description'];
                         ?>
                     </td>
                     <td>
