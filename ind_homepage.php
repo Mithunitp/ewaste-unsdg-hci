@@ -117,7 +117,7 @@
 					<center>
 					<table>
 						<tr>
-							<td><select name="item_cat" style="height:37px">
+							<td><select name="item_cat[]" style="height:37px">
 							<option value="phone" disabled selected="selected">Select Type</option>
                        <option value="phone">Mobile Phone</option>
                        <option value="camera">Camera/Camcoder</option>
@@ -135,7 +135,7 @@
 					   <input type="number" name="qty[]" style="height:30px; width:70px"></td>
 						</tr>
 						<tr>
-							<td><select name="item_cat" style="height:37px">
+							<td><select name="item_cat[]" style="height:37px">
 							<option value="phone" disabled selected="selected">Select Type</option>
                        <option value="phone">Mobile Phone</option>
                        <option value="camera">Camera/Camcoder</option>
@@ -153,7 +153,7 @@
 					   <input type="number" name="qty[]" style="height:30px; width:70px"></td>
 						</tr>
 						<tr>
-							<td><select name="item_cat" style="height:37px">
+							<td><select name="item_cat[]" style="height:37px">
 							<option value="phone" disabled selected="selected">Select Type</option>
                        <option value="phone">Mobile Phone</option>
                        <option value="camera">Camera/Camcoder</option>
@@ -171,7 +171,7 @@
 					   <input type="number" name="qty[]" style="height:30px; width:70px"></td>
 						</tr>
 						<tr>
-							<td><select name="item_cat" style="height:37px">
+							<td><select name="item_cat[]" style="height:37px">
 							<option value="phone" disabled selected="selected">Select Type</option>
                        <option value="phone">Mobile Phone</option>
                        <option value="camera">Camera/Camcoder</option>
@@ -189,7 +189,7 @@
 					   <input type="number" name="qty[]" style="height:30px; width:70px"></td>
 						</tr>
 						<tr>
-							<td><select name="item_cat" style="height:37px">
+							<td><select name="item_cat[]" style="height:37px">
 							<option value="phone" disabled selected="selected">Select Type</option>
                        <option value="phone">Mobile Phone</option>
                        <option value="camera">Camera/Camcoder</option>
@@ -239,14 +239,12 @@
 			$c = $_POST['mobileno'];
 			$d = $_POST['email'];
 			$e = $_POST['address'];
-			$f = $_POST['pincode'];
-			$q="INSERT INTO `ind_ewaste`(`username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES ('$a', '$b', '$c', '$d' , '$e', '$f', 'hhh','jjj')";
-			$res = mysqli_query($con, $q);
-			if($res){
-				echo "Worked";
-			}
-			else{
-				echo "Didnt work";
+			$f = $_POST['pincode']; 
+			for($i=0; $i<count($_POST["item_cat"]); $i++){
+				$g = $_POST["item_cat"][$i];
+				$h = $_POST["qty"][$i];
+				$q="INSERT INTO `ind_ewaste`(`username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES ('$a', '$b', '$c', '$d' , '$e', '$f', '$g', $h)";
+				$res = mysqli_query($con, $q);
 			}
 		}
 	?>
