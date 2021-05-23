@@ -2,10 +2,10 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: May 22, 2021 at 11:29 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Host: localhost
+-- Generation Time: May 23, 2021 at 12:22 PM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.2.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -45,7 +45,9 @@ INSERT INTO `bin` (`bin_id`, `bin_loc`, `bin_pin`, `status`, `ind_accesscode`, `
 (2, 'Seven Wonders Road, Vallabhbari, Kota', 324007, 'EMPTY', 123457, 754321),
 (3, 'Near City Mall, Jhalawar Road, Kota', 324004, 'HALF-FULL', 123458, 854321),
 (4, 'Chambal Garden Road, Dadabari, Kota', 324009, 'EMPTY', 123459, 954321),
-(5, 'Near St. Paul\'s School, Mala Road, Kota', 324001, 'FULL', 123478, 874321);
+(5, 'Near St. Paul\'s School, Mala Road, Kota', 324001, 'FULL', 123478, 874321),
+(6, 'Near Agarsen Circle, Kota', 324001, 'EMPTY', 615322, 167539),
+(7, 'Near Horse Statue, Chatra Vilas Garden, Nayapura, Kota', 324001, 'FULL', 625138, 761334);
 
 -- --------------------------------------------------------
 
@@ -134,6 +136,15 @@ CREATE TABLE `ind_ewaste` (
   `item_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ind_ewaste`
+--
+
+INSERT INTO `ind_ewaste` (`date`, `username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES
+('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'battery', 12),
+('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'camera', 33),
+('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'phone', 2);
+
 -- --------------------------------------------------------
 
 --
@@ -163,13 +174,27 @@ INSERT INTO `recyclers` (`username`, `password`, `rec_name`, `rec_address`, `rec
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `request`
+--
+
+CREATE TABLE `request` (
+  `req_id` int(11) NOT NULL,
+  `collector_id` varchar(20) NOT NULL,
+  `recycler_id` varchar(20) DEFAULT NULL,
+  `Description` text NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `shipment`
 --
 
 CREATE TABLE `shipment` (
   `collector_id` varchar(20) NOT NULL,
   `recycler_id` varchar(20) NOT NULL,
-  `shipment_id` varchar(10) NOT NULL,
+  `shipment_id` int(11) NOT NULL,
   `categories` text NOT NULL,
   `vehicle_type` text NOT NULL,
   `vehicle_no` varchar(10) NOT NULL,
