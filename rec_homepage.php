@@ -1,3 +1,7 @@
+<?php
+    require 'dbconfig/config.php';
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -31,7 +35,7 @@
 
                     <ul class="nav__list">
                         <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link">Requests</a></li>
+                        <li class="nav__item"><a href="#request" class="nav__link">Requests</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Shipments</a></li>
                         <li class="nav__item"><a href="logout.php" class="nav__link">Logout</a></li>
                     </ul>
@@ -62,6 +66,44 @@
                 </div>
             </section>
         </main>
+
+        <div id="request">
+            <table>
+                <tr>
+                    <th>Request ID</th>
+                    <th>Collector Name</th>
+                    <th>Description</th>
+                </tr>
+                <?php
+                    $query1="Select * from request where status=0";
+                    $res1=mysqli_query($con,$query1);
+                    while($rows=$res1->fetch_assoc()){
+                        ?>
+                    <tr>
+                    <td>
+                        <?php
+                            echo $rows['req_id'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            $x=$rows['collector_id'];
+                            $query2="Select collector_name from collectors where username= '$x'";
+                            //echo $rows['collector_id'];
+                            $res2=mysqli_query($con,$query2);
+                            $row2=$res2->fetch_assoc();
+                            echo $row2['collector_name'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            echo $rows['Description'];
+                        ?>
+                    </td>
+                    </tr>
+                    <?php } ?>
+            </table>
+        </div>
 
 
         <!--===== GSAP =====-->
