@@ -16,7 +16,7 @@
         <header class="l-header">
         <nav class="nav bd-grid">
                 <div>
-                    <a href="#" class="nav__logo">Coffee</a>
+                    <a href="#" class="nav__logo">E-Waste Management</a>
                 </div>
                 
                 <div class="nav__toggle" id="nav-toggle">
@@ -29,8 +29,8 @@
                     </div>
 
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link active">About</a></li>
+                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
+                        <li class="nav__item"><a href="#" class="nav__link active">Collector</a></li>
                         <li class="nav__item"><a href="#skills" class="nav__link">Blog</a></li>
                         <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                     </ul>

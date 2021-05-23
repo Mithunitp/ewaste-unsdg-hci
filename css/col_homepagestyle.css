@@ -5,7 +5,7 @@
   --header-height: 3rem;
 
   /*===== Colors =====*/
-  --first-color: teal;
+  --first-color: rgb(0, 108, 180);
   --first-color-dark: #C1576A;
   --first-color-darken: #A83E51;
   --white-color: #FCF8F8;
@@ -112,7 +112,7 @@ img{
 }
 
 .nav__link.active{
-  color:yellow;
+  color:#f5aeb0;
 }
 
 .nav__close, .nav__link, .nav__logo, .nav__toggle{
@@ -124,7 +124,7 @@ img{
 }
 
 .nav__link:hover{
-  color: var(--first-color-dark);
+  color: maroon;
 }
 
 .nav__toggle{

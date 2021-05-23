@@ -58,7 +58,7 @@
 <body>
  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><strong><i class="fa fa-arrow-up"></i>&nbsp Individuals</strong></a>
+              <a class="navbar-brand" href="#"><strong>E-Waste Management</strong></a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -68,7 +68,7 @@
                     <a class="nav-link" aria-current="page" href="index.html">Home</a>
                   </li>
 				  <li class="nav-item active">
-                    <a class="nav-link" aria-current="page" href="index.html">Details Collection</a>
+                    <a class="nav-link" aria-current="page" href="ind_homepage.php">Individuals Details Collection</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Disposal procedure</a>
