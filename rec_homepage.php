@@ -1,7 +1,7 @@
 <?php
     require 'dbconfig/config.php';
     
-    ?>
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,9 +34,9 @@
                     </div>
 
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="#request" class="nav__link">Requests</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link">Shipments</a></li>
+                        <li class="nav__item"><a href="rec_homepage.php" class="nav__link active">Home</a></li>
+                        <li class="nav__item"><a href="#requests" class="nav__link">Requests</a></li>
+                        <li class="nav__item"><a href="#rec_shipments" class="nav__link">Shipments</a></li>
                         <li class="nav__item"><a href="logout.php" class="nav__link">Logout</a></li>
                     </ul>
                 </div>

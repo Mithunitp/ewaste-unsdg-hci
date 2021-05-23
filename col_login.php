@@ -4,7 +4,6 @@
 	//phpinfo();
 ?>
 
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,6 +44,8 @@
 					
 					$_SESSION['username'] = $username;
 					$_SESSION['password'] = $password;
+					$_SESSION['pin']=$row['collector_pin'];
+					$_SESSION['state']=$row['collector_state'];
 					echo '<script>window.location.href="col_homepage.php";</script>';
 					}
 					else
