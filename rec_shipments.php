@@ -94,7 +94,7 @@
                                 </td>
                                 <td>
                                     <?php
-                                        echo $rows['description'];
+                                        echo $rows['Description'];
                                     ?>
                                 </td>
                                 <td>
