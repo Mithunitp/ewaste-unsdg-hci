@@ -12,7 +12,7 @@
 </head>
 <body style="background-color: teal;">
 	<div id="main-wrapper">
-	<center><h2>Login Form</h2></center>
+	<center><h2 style="font-family: Arial, Helvetica, sans-serif;">Login Form</h2></center>
 			<div class="imgcontainer">
 				<img src="avatar.png" alt="Avatar" class="avatar">
 			</div>

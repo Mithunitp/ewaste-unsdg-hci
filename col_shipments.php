@@ -60,8 +60,7 @@
                     </div>
 
                     <ul class="nav__list">
-                        <li class="nav__item"><a href="index.html" class="nav__link">Home</a></li>
-                        <li class="nav__item"><a href="col_homepage.php" class="nav__link">Collector</a></li>
+                        <li class="nav__item"><a href="col_homepage.php" class="nav__link">Home</a></li>
                         <li class="nav__item"><a href="col_requests.php" class="nav__link">Requests</a></li>
                         <li class="nav__item"><a href="col_shipments.php" class="nav__link active">Shipments</a></li>
                         <li class="nav__item"><a href="logout.php" class="nav__link">Logout</a></li>
