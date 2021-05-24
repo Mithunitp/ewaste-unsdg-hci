@@ -103,7 +103,7 @@
                                 ?>
                             </td>
                             <td>
-                                <button onclick="window.open('updatestatus.php?id=<?php echo $val ?>')" class="home__button">Accept</button>
+                                <a href="updatestatus.php?id=<?php echo $val ?>" class="home__button">Accept</a>
                             </td>
                             </tr>
                             <?php } ?>
