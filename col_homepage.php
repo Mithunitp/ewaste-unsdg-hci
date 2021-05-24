@@ -62,7 +62,8 @@
                     <div class="home__data">
                         <h1 class="home__title">Welcome<br> to E-Waste <br> Collector portal</h1>
                         <p class="home__description">Communicate with State-level recyclers <br> and track E-Waste bins<br>in your pincode.</p>
-                        <a href="#bin" class="home__button">Track Bins</a>
+                        <a href="#bin" class="home__button">View Bin Info</a>
+                        <a href="https://e-waste-management-portal.eu-gb.mybluemix.net/ui/#!/0?socketid=OAfBIkJjgIXItWUJAAAO" target="_blank" class="home__button">Track Bin Capacity</a>
                         <a href="#request" class="home__button">Check Request Status</a>
                         
                     </div>

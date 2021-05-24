@@ -67,7 +67,7 @@
                     </div>
                 </div>
                 <div id="request">
-                    <center><h1>Available Requests</h1></center>
+                    <center><h1 style="color:white;">Available Requests</h1></center>
                     <br>
                     <table>
                         <tr>

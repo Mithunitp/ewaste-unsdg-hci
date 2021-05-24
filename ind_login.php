@@ -46,7 +46,7 @@
 					
 					$_SESSION['username'] = $username;
 					$_SESSION['password'] = $password;
-					echo '<script>window.location.href="ind_homepage.php";</script>';
+					echo '<script>window.location.href="ind_homepage1.php";</script>';
 					}
 					else
 					{

@@ -1,75 +1,39 @@
-var current_fs,next_fs,previous_fs;
+/*===== MENU SHOW Y HIDDEN =====*/
+const navMenu = document.getElementById('nav-menu'),
+    toggleMenu = document.getElementById('nav-toggle'),
+    closeMenu = document.getElementById('nav-close')
 
-var left,opacity,scale;
-var animation;
+// SHOW
+toggleMenu.addEventListener('click', ()=>{
+    navMenu.classList.toggle('show')
+})
 
+// HIDDEN
+closeMenu.addEventListener('click', ()=>{
+    navMenu.classList.remove('show')
+})
 
-/*$(".next").click(function(){
-	else{
-	if(animation)return false;
-	animation=true;
+/*===== MOUSEMOVE HOME IMG =====*/
+document.addEventListener('mousemove', move);
+function move(e){
+    this.querySelectorAll('.move').forEach(layer =>{
+        const speed = layer.getAttribute('data-speed')
 
-	current_fs=$(this).parent();
-	next_fs= $(this).parent().next();
+        const x = (window.innerWidth - e.pageX*speed)/120
+        const y = (window.innerHeight - e.pageY*speed)/120
 
-	$("#progressbar li").eq($("fieldset").index(next_fs)).addClass("active");
+        layer.style.transform = `translateX(${x}px) translateY(${y}px)`
+    })
+}
 
-	next_fs.show();
-	current_fs.animate({opacity:0},{
-		step:function(now,mx){
+/*===== GSAP ANIMATION =====*/
+// NAV
+gsap.from('.nav__logo, .nav__toggle', {opacity: 0, duration: 1, delay:2, y: 10})
+gsap.from('.nav__item', {opacity: 0, duration: 1, delay: 2.1, y: 30, stagger: 0.2,})
 
-			scale=1-(1-now)*.85;
-			left=(now*100)+"%";
-			opacity=1+now;
-
-			current_fs.css({
-				'transform':'scale('+scale+')',
-				'position':'absolute'
-			});
-			next_fs.css({'left':left,'opacity':opacity});
-		},
-		duration:1000,
-		complete:function(){
-			current_fs.hide();
-			animation=false;
-		},
-		easing:'easeInOutBack'
-	});
-	}
-});
-
-
-$(".previous").click(function(){
-
-	if(animation)return false;
-	animation=true;
-
-	current_fs=$(this).parent();
-	previous_fs= $(this).parent().prev();
-
-	$("#progressbar li").eq($("fieldset").index(current_fs)).removeClass("active");
-
-	previous_fs.show();
-	current_fs.animate({opacity:0},{
-		step:function(now,mx){
-
-			scale=0.8 + (1-now)*0.2;
-			left=((1-now)*80)+"%";
-			opacity=1+now;
-
-			current_fs.css({
-				'left':left
-			});
-			previous_fs.css({'transform':'scale('+scale+')','opacity':opacity});
-		},
-		duration:1000,
-		complete:function(){
-			current_fs.hide();
-			animation=false;
-		},
-		easing:'easeInOutBack'
-	});
-
-}); */
-
- 
+// HOME
+gsap.from('.home__title', {opacity: 0, duration: 1, delay:1.6, y: 30})
+gsap.from('.home__data', {opacity: 0, duration: 1, delay:1.7, y: 30})
+gsap.from('.home__description', {opacity: 0, duration: 1, delay:1.8, y: 30})
+gsap.from('.home__button', {opacity: 0, duration: 1, delay:2.1, y: 30})
+gsap.from('.home__img', {opacity: 0, duration: 1, delay:1.3, y: 30})
