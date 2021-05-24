@@ -41,6 +41,8 @@ body{
 
 h1,p,ul{
   margin: 0;
+  background-color: var(--first-color);
+  color:white;
 }
 
 ul{
@@ -56,7 +58,22 @@ img{
   max-width: 100%;
   height: auto;
 }
-
+table {
+  border-collapse: collapse;
+  width: 80%;
+  background-color: rgb(0, 108, 180);
+  color:white;
+  margin-left:auto;
+  margin-right:auto;
+}
+#bin,#request{
+  background-color: rgb(0, 108, 180);
+}
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
 /*===== LAYOUT =====*/
 .bd-grid{
   max-width: 1024px;
