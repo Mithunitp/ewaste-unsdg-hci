@@ -69,7 +69,8 @@
                 </div>
             </section>
         </main>
-        <div id="bin">
+        <div id="bin" class="home__data">
+        <center><h1>Bins</h1></center>
             <table>
                 <tr>
                     <th>Bin ID</th>
@@ -109,17 +110,19 @@
                     <?php } ?>
             </table>
         </div>
-        <div id="request">
+        <div id="request" class="home__data">
+        <br><br><center><h1>Approved Requests</h1></center>
             <table>
                 <tr>
                     <th>Request ID</th>
+                    <th>Recycler ID</th>
                     <th>Recycler Name</th>
                     <th>Address</th>
                     <th>Status</th>
                 </tr>
                 <?php
                     $cid=$_SESSION['username'];
-                    $query2="Select * from request where collector_id='$cid' && status=1";
+                    $query2="Select * from request where collector_id='$cid' and status=1";
                     $res2=mysqli_query($con,$query2);
                     while($rows2=$res2->fetch_assoc()){
                         ?>
@@ -127,6 +130,11 @@
                     <td>
                         <?php
                             echo $rows2['req_id'];
+                        ?>
+                    </td>
+                    <td>
+                        <?php
+                            echo $rows2['recycler_id'];
                         ?>
                     </td>
                     <td>
@@ -145,7 +153,10 @@
                     </td>
                     <td>
                         <?php
-                            echo $rows2['status'];
+                            if($rows2['status'])
+                            {
+                                echo "Approved";
+                            }
                         ?>
                     </td>
                     </tr>

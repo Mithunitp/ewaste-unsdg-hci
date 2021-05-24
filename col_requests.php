@@ -19,6 +19,28 @@
         <link rel="stylesheet" href="css/col_homepagestyle.css">
 
         <title>E-Waste collector portal</title>
+        <style>
+        form input[type="text"],textarea{
+                color:white;
+                background-color: rgba(0,0,0,0.3);
+                border-bottom: none;
+                border-top:none;
+                border-left:none;
+                border-right:none;
+                font-family: Arial, Helvetica, sans-serif;
+                height:50px;
+            }
+            form input[type="submit"]{
+                
+                border:none;
+                font-size:1rem;
+            }
+            ::placeholder{
+                color:white;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:1rem;
+            }
+        </style>
     </head>
     <body>
         <!--===== HEADER =====-->
@@ -64,8 +86,8 @@
                         <h2>Make a request to the recyclers<br>in your state for the collected e-waste.</h2>
                         <h3>Give a detailed description about the category and quantity of e-waste.</h3>
                         <form action="col_requests.php" method="post">
-                            <textarea name="req_des" style="height:200px;width:650px;"> </textarea>
-                            <br><input type="submit" name="submit">
+                            <textarea placeholder="Description box" name="req_des" style="height:200px;width:650px;" required></textarea>
+                            <br><input class="home__button" type="submit" name="submit">
                         </form>
                         <?php
                             if(isset($_POST['submit']) && isset($_SESSION['username']))
