@@ -99,11 +99,11 @@
                             </td>
                             <td>
                                 <?php
-                                    echo $rows['Description'];
+                                    echo $rows['description'];
                                 ?>
                             </td>
                             <td>
-                                <button onclick="window.open('updatestatus.php?id=<?php echo $val ?>')">Accept</button>
+                                <button onclick="window.open('updatestatus.php?id=<?php echo $val ?>')" class="home__button">Accept</button>
                             </td>
                             </tr>
                             <?php } ?>
