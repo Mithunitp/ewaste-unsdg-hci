@@ -33,7 +33,7 @@
 				<!--<label><b>Password</b></label>-->
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<!--<label><b>Confirm Password</b></label>-->
-				<input type="password" placeholder="Enter Password" name="cpassword" required>
+				<input type="password" placeholder="Re-Enter Password" name="cpassword" required>
 				
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>
 				

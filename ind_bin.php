@@ -70,7 +70,7 @@
                     </div-->
 
                     <div class="home__data">
-                        <h1>Thank you for contributing to sustainability by using our portal!</h1>
+                        <h1>Dear User, Thank you for contributing to sustainability by using our portal!</h1>
                         <h3>Please find a bin for your request below:</h3>
                         <table>
                         <tr>
