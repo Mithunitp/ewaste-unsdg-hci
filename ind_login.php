@@ -3,8 +3,6 @@
 	require_once('dbconfig/config.php');
 	//phpinfo();
 ?>
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +10,7 @@
 <link rel="stylesheet" href="css/login_regstyle.css">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 </head>
-<body style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(login_bg.jpg);">
+<body style="background-color: teal;">
 	<div id="main-wrapper">
 	<center><h2>Login Form</h2></center>
 			<div class="imgcontainer">
@@ -21,12 +19,13 @@
 		<form action="ind_login.php" method="post">
 		
 			<div class="inner_container">
-				<label><b>Username</b></label>
+				<!--label><b>Username</b></label-->
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<label><b>Password</b></label>
+				<!--label><b>Password</b></label-->
 				<input type="password" placeholder="Enter Password" name="password" required>
 				<button class="login_button" name="login" type="submit">Login</button>
 				<a href="ind_register.php"><button type="button" class="register_btn">Register</button></a>
+				<a href="index.html"><button type="button" class="back_btn">Back to Homepage</button></a>
 			</div>
 		</form>
 		<?php

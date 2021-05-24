@@ -10,7 +10,7 @@
 <title>Sign Up Page</title>
 <link rel="stylesheet" href="css/login_regstyle.css">
 </head>
-<body style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(login_bg.jpg);">
+<body style="background-color: teal;">
 	<div id="main-wrapper">
 	<center><h2>Sign Up Form</h2></center>
 		<form action="rec_register.php" method="post">
@@ -18,19 +18,19 @@
 				<img src="avatar.png" alt="Avatar" class="avatar">
 			</div>
 			<div class="inner_container">
-				<label><b>Username</b></label>
+				<!--<label><b>Username</b></label>-->
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<label><b>Name</b></label>
+				<!--<label><b>Name</b></label>-->
 				<input type="text" placeholder="Enter Name" name="rec_name" required>
-				<label><b>Address</b></label>
+				<!--<label><b>Address</b></label>-->
 				<input type="text" placeholder="Enter Address" name="rec_address" required>
-				<label><b>State</b></label>
+				<!--<label><b>State</b></label>-->
 				<input type="text" placeholder="Enter State" name="rec_state" required>
-				<label><b>Contact Number</b></label>
-				<input type="int" placeholder="Enter Contact Number" name="rec_mno" required>
-				<label><b>Password</b></label>
+				<!--<label><b>Contact Number</b></label>-->
+				<input type="number" placeholder="Enter Contact Number" name="rec_mno" required>
+				<!--<label><b>Password</b></label>-->
 				<input type="password" placeholder="Enter Password" name="password" required>
-				<label><b>Confirm Password</b></label>
+				<!--<label><b>Confirm Password</b></label>-->
 				<input type="password" placeholder="Enter Password" name="cpassword" required>
 
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>

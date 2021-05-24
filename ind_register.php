@@ -10,19 +10,19 @@
 <title>Sign Up Page</title>
 <link rel="stylesheet" href="css/login_regstyle.css">
 </head>
-<body style="background-image:linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(login_bg.jpg);">
+<body style="background-color:teal;">
 	<div id="main-wrapper">
-	<center><h2>Sign Up Form</h2></center>
+	<center><h2 style="font-family: Arial, Helvetica, sans-serif;">Sign Up Form</h2></center>
 		<form action="ind_register.php" method="post">
 			<div class="imgcontainer">
 				<img src="avatar.png" alt="Avatar" class="avatar">
 			</div>
 			<div class="inner_container">
-				<label><b>Username</b></label>
+				<!--<label><b>Username</b></label>-->
 				<input type="text" placeholder="Enter Username" name="username" required>
-				<label><b>Password</b></label>
+				<!--<label><b>Password</b></label>-->
 				<input type="password" placeholder="Enter Password" name="password" required>
-				<label><b>Confirm Password</b></label>
+				<!--<label><b>Confirm Password</b></label>-->
 				<input type="password" placeholder="Enter Password" name="cpassword" required>
 				<button name="register" class="sign_up_btn" type="submit">Sign Up</button>
 				
