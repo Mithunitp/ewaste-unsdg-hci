@@ -52,7 +52,6 @@
                     <ul class="nav__list">
                         <li class="nav__item"><a href="ind_homepage1.php" class="nav__link">Home</a></li>
                         <li class="nav__item"><a href="ind_bin.php" class="nav__link active">Bins</a></li>
-                        <!--li class="nav__item"><a href="#" class="nav__link">Disposal Procedure</a></li-->
                         <li class="nav__item"><a href="logout.php" class="nav__link">Logout</a></li>
                     </ul>
                 </div>

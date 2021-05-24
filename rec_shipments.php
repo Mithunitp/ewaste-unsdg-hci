@@ -60,7 +60,7 @@
                     </div> -->
 
                     <div class="home__data">
-                        <h2 class="home__title2">Track your incoming shipments of e-waste</h2>
+                        <h2 class="home__title2">Track your incoming shipments of E-waste</h2>
                         <table>
                             <tr>
                                 <th>Shipment ID</th>
