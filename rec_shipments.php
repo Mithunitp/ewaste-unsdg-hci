@@ -129,6 +129,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
 
         <!--===== MAIN JS =====-->
-        <script src="js/col_js.js"></script>
+        <script src="js/rec_js.js"></script>
     </body>
 </html>

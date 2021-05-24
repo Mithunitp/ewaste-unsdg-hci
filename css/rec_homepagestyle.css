@@ -5,7 +5,8 @@
   --header-height: 3rem;
 
   /*===== Colors =====*/
-  --first-color: #13C8E8;
+  /*--first-color: #13C8E8;35C56B#33B464*/
+  --first-color: #35C56B;
   --first-color-dark: #C1576A;
   --first-color-darken: #A83E51;
   --white-color: #FCF8F8;
@@ -239,8 +240,9 @@ img{
 }
 table {
   border-collapse: collapse;
-  width: 100%;
-  margin-left:3rem;
+  width: 70%;
+  margin-left:auto;
+  margin-right: auto;
 }
 th{
   color:black;

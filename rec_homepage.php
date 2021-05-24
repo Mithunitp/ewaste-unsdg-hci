@@ -63,7 +63,7 @@
                         <h1 class="home__title">Welcome<br> to E-Waste <br> Recycler portal</h1>
                         <p class="home__description">Communicate with Local collectors <br> and track incoming ewaste<br>shipments</p>
                         <a href="#request" class="home__button">Collection Requests</a>
-                        <a href="#" class="home__button">Incoming Shipment details</a>
+                        <a href="rec_shipments.php" class="home__button">Incoming Shipment details</a>
                     </div>
                 </div>
                 <div id="request">
