@@ -5,7 +5,7 @@
   --header-height: 3rem;
 
   /*===== Colors =====*/
-  --first-color: TEAL;
+  --first-color: #13C8E8;
   --first-color-dark: #C1576A;
   --first-color-darken: #A83E51;
   --white-color: #FCF8F8;
@@ -113,7 +113,7 @@ img{
 } 
 
 .nav__link.active{
-  color:#F5AEB0;
+  color:#C1576A;
 }
 
 .nav__close, .nav__link, .nav__logo, .nav__toggle{
@@ -172,6 +172,10 @@ img{
   font-size: var(--big-font-size);
   line-height: 1.3;
   margin-bottom: 1rem;
+}
+.home__title2{
+  font-size:40px;
+  line-height: 1.3;
 }
 
 .home__description{
@@ -232,6 +236,23 @@ img{
   .home__img img{
     width: 375px;
   }
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-left:3rem;
+}
+th{
+  color:black;
+}
+td{
+  color:white;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
 }
 
 @media screen and (min-width: 1024px){
