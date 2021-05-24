@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 23, 2021 at 12:22 PM
+-- Generation Time: May 24, 2021 at 07:43 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
 
@@ -41,13 +41,17 @@ CREATE TABLE `bin` (
 --
 
 INSERT INTO `bin` (`bin_id`, `bin_loc`, `bin_pin`, `status`, `ind_accesscode`, `col_accesscode`) VALUES
-(1, 'Near Singhania School, Baran Road, Kota', 324001, 'FULL', 123456, 654321),
+(1, 'Near Singhania School, Baran Road, Kota', 324001, 'EMPTY', 123456, 654321),
 (2, 'Seven Wonders Road, Vallabhbari, Kota', 324007, 'EMPTY', 123457, 754321),
 (3, 'Near City Mall, Jhalawar Road, Kota', 324004, 'HALF-FULL', 123458, 854321),
 (4, 'Chambal Garden Road, Dadabari, Kota', 324009, 'EMPTY', 123459, 954321),
 (5, 'Near St. Paul\'s School, Mala Road, Kota', 324001, 'FULL', 123478, 874321),
 (6, 'Near Agarsen Circle, Kota', 324001, 'EMPTY', 615322, 167539),
-(7, 'Near Horse Statue, Chatra Vilas Garden, Nayapura, Kota', 324001, 'FULL', 625138, 761334);
+(7, 'Near Horse Statue, Chatra Vilas Garden, Nayapura, Kota', 324001, 'FULL', 625138, 761334),
+(8, ' Near Prince House, Kari Bawadi, Kota', 324001, 'EMPTY', 678314, 297831),
+(9, 'Near Gandiv Circle, Kota', 324001, 'HALF-FULL', 561473, 647382),
+(10, 'Near Shiv Mandir, Police Line, Kota', 324001, 'HALF-FULL', 478142, 972482),
+(11, 'Near Geeta Bhawan, Agrasen Bazar, Rampura, Kota', 324001, 'FULL', 879421, 841023);
 
 -- --------------------------------------------------------
 
@@ -136,15 +140,6 @@ CREATE TABLE `ind_ewaste` (
   `item_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
---
--- Dumping data for table `ind_ewaste`
---
-
-INSERT INTO `ind_ewaste` (`date`, `username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES
-('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'battery', 12),
-('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'camera', 33),
-('2021-05-23 12:54:05', 'mithun', 'Mithun P', 932751, 'ahsdkjg', 'kjsakjg', 324001, 'phone', 2);
-
 -- --------------------------------------------------------
 
 --
@@ -181,9 +176,21 @@ CREATE TABLE `request` (
   `req_id` int(11) NOT NULL,
   `collector_id` varchar(20) NOT NULL,
   `recycler_id` varchar(20) DEFAULT NULL,
-  `Description` text NOT NULL,
+  `description` text NOT NULL,
   `status` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `request`
+--
+
+INSERT INTO `request` (`req_id`, `collector_id`, `recycler_id`, `description`, `status`) VALUES
+(1, 'collector01', NULL, 'Laptop-20kg\r\nPhone-10kg', 0),
+(2, 'collector04', NULL, 'Battery-10kg\r\nCamera-10kg', 0),
+(3, 'collector01', NULL, 'Laptop 30Kg', 0),
+(4, 'collector03', NULL, 'Battery 15kg', 0),
+(5, 'collector05', NULL, 'Battery-10kg\r\nCamera-10kg', 0),
+(6, 'collector07', NULL, 'Mobile 420kg\r\nWires 5kg', 0);
 
 -- --------------------------------------------------------
 
@@ -192,15 +199,25 @@ CREATE TABLE `request` (
 --
 
 CREATE TABLE `shipment` (
+  `shipment_id` int(11) NOT NULL,
   `collector_id` varchar(20) NOT NULL,
   `recycler_id` varchar(20) NOT NULL,
-  `shipment_id` int(11) NOT NULL,
-  `categories` text NOT NULL,
+  `description` text NOT NULL,
   `vehicle_type` text NOT NULL,
   `vehicle_no` varchar(10) NOT NULL,
   `driver_name` text NOT NULL,
   `driver_mno` bigint(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shipment`
+--
+
+INSERT INTO `shipment` (`shipment_id`, `collector_id`, `recycler_id`, `description`, `vehicle_type`, `vehicle_no`, `driver_name`, `driver_mno`) VALUES
+(3, 'collector01', 'recycler1', 'Laptop 30kg\r\nMobile 20kg', 'TATA MINIVAN', 'RJ0521', 'George', 9781431123),
+(4, 'collector04', 'recycler1', 'Batteries 30Kg\r\nCamera 150kg\r\nCables 200kg', 'EICHER TRUCK', 'RJ09223', 'Henry', 969757261),
+(5, 'collector03', 'recycler1', 'Keyboards 45kg\r\nMotherboards 100kg\r\nPCB 200KG', 'TATA TRUCK', 'RJ0932', 'Hal', 873815623),
+(6, 'collector01', 'recycler1', 'Speakers 100kg\r\nConsoles 50Kg\r\nPhones 35Kg', 'Tata MINIVAN', 'RJ02172', 'Jody', 972634133);
 
 --
 -- Indexes for dumped tables
@@ -235,6 +252,34 @@ ALTER TABLE `ind_ewaste`
 --
 ALTER TABLE `recyclers`
   ADD PRIMARY KEY (`username`);
+
+--
+-- Indexes for table `request`
+--
+ALTER TABLE `request`
+  ADD PRIMARY KEY (`req_id`);
+
+--
+-- Indexes for table `shipment`
+--
+ALTER TABLE `shipment`
+  ADD PRIMARY KEY (`shipment_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `request`
+--
+ALTER TABLE `request`
+  MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `shipment`
+--
+ALTER TABLE `shipment`
+  MODIFY `shipment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
