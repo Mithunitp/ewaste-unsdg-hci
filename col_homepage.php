@@ -82,7 +82,8 @@
                 <?php
                     $cp=$_SESSION['pin'];
                     $cs=$_SESSION['state'];
-                    $query1="Select * from bin where bin_pin='$cp'";
+                    $cu=$_SESSION['username'];
+                    $query1="Select * from bin A where bin_pin='$cp' and col_id='$cu'";
                     $res1=mysqli_query($con,$query1);
                     while($rows=$res1->fetch_assoc()){
                         ?>
