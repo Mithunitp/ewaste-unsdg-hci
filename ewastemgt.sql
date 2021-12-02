@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 24, 2021 at 07:43 PM
+-- Generation Time: Dec 02, 2021 at 07:44 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.2.29
 
@@ -33,25 +33,26 @@ CREATE TABLE `bin` (
   `bin_pin` bigint(20) NOT NULL,
   `status` text NOT NULL,
   `ind_accesscode` bigint(20) NOT NULL,
-  `col_accesscode` bigint(20) NOT NULL
+  `col_accesscode` bigint(20) NOT NULL,
+  `col_id` varchar(20) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `bin`
 --
 
-INSERT INTO `bin` (`bin_id`, `bin_loc`, `bin_pin`, `status`, `ind_accesscode`, `col_accesscode`) VALUES
-(1, 'Near Singhania School, Baran Road, Kota', 324001, 'EMPTY', 123456, 654321),
-(2, 'Seven Wonders Road, Vallabhbari, Kota', 324007, 'EMPTY', 123457, 754321),
-(3, 'Near City Mall, Jhalawar Road, Kota', 324004, 'HALF-FULL', 123458, 854321),
-(4, 'Chambal Garden Road, Dadabari, Kota', 324009, 'EMPTY', 123459, 954321),
-(5, 'Near St. Paul\'s School, Mala Road, Kota', 324001, 'FULL', 123478, 874321),
-(6, 'Near Agarsen Circle, Kota', 324001, 'EMPTY', 615322, 167539),
-(7, 'Near Horse Statue, Chatra Vilas Garden, Nayapura, Kota', 324001, 'FULL', 625138, 761334),
-(8, ' Near Prince House, Kari Bawadi, Kota', 324001, 'EMPTY', 678314, 297831),
-(9, 'Near Gandiv Circle, Kota', 324001, 'HALF-FULL', 561473, 647382),
-(10, 'Near Shiv Mandir, Police Line, Kota', 324001, 'HALF-FULL', 478142, 972482),
-(11, 'Near Geeta Bhawan, Agrasen Bazar, Rampura, Kota', 324001, 'FULL', 879421, 841023);
+INSERT INTO `bin` (`bin_id`, `bin_loc`, `bin_pin`, `status`, `ind_accesscode`, `col_accesscode`, `col_id`) VALUES
+(1, 'Near Singhania School, Baran Road, Kota', 324001, 'FULL', 123456, 654321, 'collector02'),
+(2, 'Seven Wonders Road, Vallabhbari, Kota', 324007, 'EMPTY', 123457, 754321, 'collector01'),
+(3, 'Near City Mall, Jhalawar Road, Kota', 324004, 'HALF-FULL', 123458, 854321, 'collector07'),
+(4, 'Chambal Garden Road, Dadabari, Kota', 324009, 'EMPTY', 123459, 954321, 'collector06'),
+(5, 'Near St. Paul\'s School, Mala Road, Kota', 324001, 'FULL', 123478, 874321, 'collector02'),
+(6, 'Near Agarsen Circle, Kota', 324001, 'EMPTY', 615322, 167539, 'collector02'),
+(7, 'Near Horse Statue, Chatra Vilas Garden, Nayapura, Kota', 324001, 'FULL', 625138, 761334, 'collector10'),
+(8, ' Near Prince House, Kari Bawadi, Kota', 324001, 'EMPTY', 678314, 297831, 'collector10'),
+(9, 'Near Gandiv Circle, Kota', 324001, 'HALF-FULL', 561473, 647382, 'collector04'),
+(10, 'Near Shiv Mandir, Police Line, Kota', 324001, 'HALF-FULL', 478142, 972482, 'collector02'),
+(11, 'Near Geeta Bhawan, Agrasen Bazar, Rampura, Kota', 324001, 'FULL', 879421, 841023, 'collector02');
 
 -- --------------------------------------------------------
 
@@ -140,6 +141,17 @@ CREATE TABLE `ind_ewaste` (
   `item_quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `ind_ewaste`
+--
+
+INSERT INTO `ind_ewaste` (`date`, `username`, `name`, `mobileno`, `email`, `address`, `pincode`, `item_cat`, `item_quantity`) VALUES
+('2021-11-13 22:31:43', 'jay', 'Jay', 1241235, 'jay.gupta@gmail.com', 'No 10, Kota, Rajasthan', 324001, 'camera', 4),
+('2021-11-13 22:31:43', 'jay', 'Jay', 1241235, 'jay.gupta@gmail.com', 'No 10, Kota, Rajasthan', 324001, 'charger', 3),
+('2021-11-13 22:31:43', 'jay', 'Jay', 1241235, 'jay.gupta@gmail.com', 'No 10, Kota, Rajasthan', 324001, 'laptop', 2),
+('2021-11-13 22:31:43', 'jay', 'Jay', 1241235, 'jay.gupta@gmail.com', 'No 10, Kota, Rajasthan', 324001, 'phone', 5),
+('2021-11-13 22:31:43', 'jay', 'Jay', 1241235, 'jay.gupta@gmail.com', 'No 10, Kota, Rajasthan', 324001, 'television', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -185,12 +197,13 @@ CREATE TABLE `request` (
 --
 
 INSERT INTO `request` (`req_id`, `collector_id`, `recycler_id`, `description`, `status`) VALUES
-(1, 'collector01', NULL, 'Laptop-20kg\r\nPhone-10kg', 0),
-(2, 'collector04', NULL, 'Battery-10kg\r\nCamera-10kg', 0),
-(3, 'collector01', NULL, 'Laptop 30Kg', 0),
+(1, 'collector02', 'recycler2', 'Laptop-20kg\r\nPhone-10kg', 1),
+(2, 'collector04', 'recycler1', 'Battery-10kg\r\nCamera-10kg', 1),
+(3, 'collector02', 'recycler3', 'Laptop 30Kg', 1),
 (4, 'collector03', NULL, 'Battery 15kg', 0),
 (5, 'collector05', NULL, 'Battery-10kg\r\nCamera-10kg', 0),
-(6, 'collector07', NULL, 'Mobile 420kg\r\nWires 5kg', 0);
+(6, 'collector07', NULL, 'Mobile 420kg\r\nWires 5kg', 0),
+(7, 'collector02', 'recycler1', 'Mobile 50kg\r\nLaptop 100kg\r\nBatteries 40kg\r\nLCD Screens 30kg\r\nCamera 70Kg', 1);
 
 -- --------------------------------------------------------
 
@@ -217,7 +230,9 @@ INSERT INTO `shipment` (`shipment_id`, `collector_id`, `recycler_id`, `descripti
 (3, 'collector01', 'recycler1', 'Laptop 30kg\r\nMobile 20kg', 'TATA MINIVAN', 'RJ0521', 'George', 9781431123),
 (4, 'collector04', 'recycler1', 'Batteries 30Kg\r\nCamera 150kg\r\nCables 200kg', 'EICHER TRUCK', 'RJ09223', 'Henry', 969757261),
 (5, 'collector03', 'recycler1', 'Keyboards 45kg\r\nMotherboards 100kg\r\nPCB 200KG', 'TATA TRUCK', 'RJ0932', 'Hal', 873815623),
-(6, 'collector01', 'recycler1', 'Speakers 100kg\r\nConsoles 50Kg\r\nPhones 35Kg', 'Tata MINIVAN', 'RJ02172', 'Jody', 972634133);
+(6, 'collector01', 'recycler1', 'Speakers 100kg\r\nConsoles 50Kg\r\nPhones 35Kg', 'Tata MINIVAN', 'RJ02172', 'Jody', 972634133),
+(7, 'collector02', 'recycler1', 'Mobile 50kg\r\nLaptop 100kg\r\nBatteries 40kg\r\nLCD Screens 30kg\r\nCamera 70Kg', 'Truck', 'RJ0211', 'Khan', 3289758),
+(8, 'collector02', 'recycler1', 'Laptop 10kg\r\nMobile 15kg\r\nBattery 12kg', 'Truck', 'RJ02AE1234', 'John Doe', 8528325133);
 
 --
 -- Indexes for dumped tables
@@ -273,13 +288,13 @@ ALTER TABLE `shipment`
 -- AUTO_INCREMENT for table `request`
 --
 ALTER TABLE `request`
-  MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `req_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `shipment`
 --
 ALTER TABLE `shipment`
-  MODIFY `shipment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `shipment_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
